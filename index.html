@@ -159,9 +159,14 @@
         padding: 50px;
       }
       footer img.heart {
-        transform: translateY(3px);
-        width: 16px;
-        height: 16px;
+        transform: scale(3) translateY(-1px);
+        transition: transform 0.3s ease;
+        width: 6px;
+        height: 6px;
+        padding: 0 5px;
+      }
+      footer .made-with-love:hover img.heart {
+        transform: scale(4) translateY(-0.5px);
       }
       footer a {
         color: #333;
@@ -204,7 +209,7 @@
       <div>
         &copy; 2021 <a href="https://twitter.com/donavon">Donavon West</a>
       </div>
-      <div>
+      <div class="made-with-love">
         Made with <img class="heart" src="heart.svg" alt="heart" /> in NYC by
         <a href="https://twitter.com/donavon">@donavon</a>
       </div>
