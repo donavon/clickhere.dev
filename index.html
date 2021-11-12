@@ -4,20 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clich Here</title>
+    <title>Click Here</title>
     <link rel="shortcut icon" href="favicon.png" type="image/png" />
 
-    <meta name="description" content="Don't use click here" />
+    <meta
+      name="description"
+      content="Don't use click here. Click here to see why."
+    />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Click Here" />
     <meta property="og:title" content="Click Here" />
-    <meta property="og:description" content="Don't use click here" />
+    <meta
+      property="og:description"
+      content="Don't use click here. Click here to see why."
+    />
     <meta property="og:url" content="https://clickhere.dev" />
     <meta property="og:image" content="https://clickhere.dev/og-image.jpg" />
     <meta name="twitter:site" content="@donavon" />
     <meta name="twitter:title" content="Click Here" />
-    <meta name="twitter:description" content="Don't use click here" />
+    <meta
+      name="twitter:description"
+      content="Don't use click here. Click here to see why."
+    />
     <meta name="twitter:url" content="https://clickhere.dev" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://clickhere.dev/og-image.jpg" />
@@ -25,24 +34,40 @@
     <style>
       html,
       body {
-        height: 100%;
         margin: 0;
         padding: 0;
       }
 
       body {
         font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-        line-height: 1.42857143;
-        color: #333;
-        background-color: #fff;
       }
 
       main {
-        height: 100vh;
+        min-height: 100vh;
+        background-color: #0074d9;
+        color: white;
+      }
+
+      h1 {
+        color: black;
       }
 
       section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .title-page {
+        overflow: hidden;
+      }
+
+      .title-page .top,
+      .title-page .bottom {
+        width: 100vw;
         height: 30vh;
         padding: 10vh;
         font-size: 5vw;
@@ -53,12 +78,13 @@
         align-items: center;
         overflow: hidden;
       }
-      section span {
+
+      .title-page span {
         white-space: nowrap;
       }
 
-      section.top::before,
-      section.bottom::before {
+      .title-page .top::before,
+      .title-page .bottom::before {
         font-size: 40vw;
         line-height: 50vh;
         font-weight: 700;
@@ -69,44 +95,119 @@
         height: 100%;
       }
 
-      section.top::before {
+      .title-page .top::before {
         content: 'NO';
         opacity: 0.1;
       }
-      section.bottom::before {
+      .title-page .bottom::before {
         content: 'YES';
         opacity: 0.2;
       }
 
-      section.top {
-        /* align-items: flex-end; */
+      .title-page .top {
         color: black;
         background-color: white;
       }
 
-      section.bottom {
-        /* align-items: flex-start; */
+      .title-page .bottom {
         background-color: black;
         color: white;
       }
 
-      .container {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 0 15px;
+      .scroll-down-icon {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      .scroll-down-icon img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: -50px;
+        opacity: 0.5;
+      }
+
+      .peek-a-boo {
+        animation: peek-a-boo 3s ease 2;
+      }
+      @keyframes peek-a-boo {
+        0%,
+        20%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-70px);
+        }
+        50% {
+          transform: translateY(-40px);
+        }
+        60% {
+          transform: translateY(-60px);
+        }
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        padding: 50px;
+      }
+      footer img.heart {
+        transform: translateY(3px);
+        width: 16px;
+        height: 16px;
+      }
+      footer a {
+        color: #333;
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: #0074d9;
       }
     </style>
   </head>
   <body>
     <main>
-      <section class="top">
-        <div>
-          for more information <span>&lt;a&gt;click here&lt;/a&gt;</span>
+      <section class="title-page">
+        <div class="top">
+          <div>
+            for more information <span>&lt;a&gt;click here&lt;/a&gt;</span>
+          </div>
+        </div>
+        <div class="bottom">
+          <div>get <span>&lt;a&gt;more information&lt;/a&gt;</span></div>
+        </div>
+
+        <div class="scroll-down-icon">
+          <img
+            class="peek-a-boo"
+            src="scroll-down-icon.svg"
+            alt="scroll down to see more"
+          />
         </div>
       </section>
-      <section class="bottom">
-        <div>get <span>&lt;a&gt;more information&lt;/a&gt;</span></div>
+
+      <section>
+        <h1>Don't use "click here" in links</h1>
+
+        <h2>TODO write about why and give a lot of good/bad examples</h2>
       </section>
     </main>
+
+    <footer>
+      <div>
+        &copy; 2021 <a href="https://twitter.com/donavon">Donavon West</a>
+      </div>
+      <div>
+        Made with <img class="heart" src="heart.svg" alt="heart" /> in NYC by
+        <a href="https://twitter.com/donavon">@donavon</a>
+      </div>
+    </footer>
   </body>
 </html>
